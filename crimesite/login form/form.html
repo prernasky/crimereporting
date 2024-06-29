@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <title>HTML Login Form</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+      <div class="main">
+            <h1>CRIME SEEKERS</h1>
+            <h2>Enter your login credentials</h2>
+            <form action="">
+                  <label for="first">
+                        Username:
+                  </label>
+                  <input type="text" 
+                         id="first" 
+                         name="first" 
+                         placeholder="Enter your Username" required>
+
+                  <label for="password">
+                        Password:
+                  </label>
+                  <input type="password"
+                         id="password" 
+                         name="password"
+                         placeholder="Enter your Password" required>
+
+                  <div class="wrap">
+                        <button type="submit"
+                                onclick="solve()">
+                              Submit
+                        </button>
+                  </div>
+            </form>
+            <p>Not registered?
+                  <a href="file:///C:/Users/PRERNA/Desktop/crimesite/res.html"
+                     style="text-decoration: none;" target="_blank">
+                        Create an account
+                  </a>
+            </p>
+            <div id="map">
+                  <h3>Crime Map</h3>
+                  <!-- Map container -->
+                  <div id="map-container"></div>
+              </div>
+      </div>
+</script>
+
+<!-- Include a map library like Leaflet or Google Maps here -->
+<!-- Example for Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+    var map = L.map('map-container').setView([51.505, -0.09], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+</script>
+</body>
+
+</html>

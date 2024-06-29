@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size:14px;
+    background:#f2f2f2;
+}
+.container{
+    background: white;
+    width:500px;
+    padding:25px;
+    margin: 50px auto 0;
+    border-top: 5px solid darkred;
+    box-shadow: 0 0 7px 5px rgba(0,0,0,0.5);
+}
+.container h2{
+    font-size: 24px;
+    line-height: 24px;
+    padding-bottom:30px;
+    text-align: center ;
+}
+.input-name{
+    width:90%;
+    position: relative;
+    margin:20px auto;
+}
+.user{
+    padding: 8px 11px ;
+}
+.name{
+    width: 45%;
+    padding: 8px 0 8px 40px;
+}
+.input-name span{
+    margin-left: 35px;
+}
+.text-name{
+    width: 100%;
+    padding: 8px 0 8px 40px;
+}
+.input-name i{
+    position: absolute;
+    font-size: 18px;
+    color: darkred;
+    border-right: 1px solid #cccccc;
+    padding: 8px    ;8px
+} 
+.text-name, .name{
+    border: 1px solid #cccccc;
+    outline: none;
+    transition: all 0.50s;
+}
+
+.text-name:hover, .name:hover {
+    background-color: lightgrey;
+}
+.text-name:focus, .name:focus{
+    border: 1px solid darkred;
+}
+.radio-button{
+    margin-right: 10x;
+    margin-left: 10px;
+}
+.country{
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    padding: 0 15px;
+    cursor:pointer;
+    border:1px solid #cccccc;
+    color:#7b7b7b;
+    appearance: none;
+    transition: all 0.15s;
+}
+.country:hover, .country:focus{
+    color:darkred; 
+    border-color:darkred;
+    outline:none;
+}
+.arrow{
+    position: absolute;
+    top: calc(50% - 4px);
+    right:15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-width: 8px 5px 0 5px;
+    border-style: solid;
+    border-color: #7b7b7b transparent transparent transparent;
+}
+.country:hover + .arrow, .country:focus +.arrow{
+    border-top-color: darkred ;
+}
+.check{
+    margin-right: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.check::before{
+    content:"" ;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    vertical-align: -2px;
+    border:2px solid #cccccc;
+    padding: 2.5px;
+    background-color: transparent;
+    background-clip: content-box;
+    transform: all 0.15s;
+}
+
+.check::after{
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    content: "";
+    height: 20px;
+    left:2px; 
+    position: absolute;
+    top: 7px;
+    transform: scaleX(-1) rotate(135deg);
+    transform-origin: left top;
+    width: 7px;
+    display: none;
+}
+.check-button{
+    border:0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.check-button:hover +.check::before{
+    border-color: darkred;
+}
+
+.check-button:checked +.check::before{
+    border-color: green;
+}
+.check-button:checked +.check::after{
+   animation: check 0.8s ease 0s running;
+   display: block;
+   width: 7px;
+   height: 20px;
+   border-color: green;
+}
+@keyframes check{
+    0%{height: 0; width: 0;}
+    25%{height: 0; width: 7px;}
+    50%{height: 20px; width: 7px;}
+}
+.button{
+    background-color: darkred;
+    color: white;
+    height:35px ;
+    line-height: 35px;
+    width: 100%;
+    border:none;
+    border-radius: 20px;
+    font-size: 18px;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+.button:hover{
+    opacity: 0.7;
+}
+.button:focus{
+    opacity: 0.3;
+}
+@media (max-width: 480px){
+    .container{
+        width:100%;
+        padding: 5px;
+    }
+    .input-name {
+        margin-bottom: -10px;
+    }
+    .name{
+        width: 100%;
+        padding: 8px 0 8px 40px;
+        margin-bottom: 10px;
+    }
+    .input-name span{
+        padding: 0;
+        margin: 0;
+    }
+    .forn-container{
+        border:2px solid;
+        width: 100%;
+    }
+}
